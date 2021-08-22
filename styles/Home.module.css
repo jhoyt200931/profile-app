@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background: #FEFEF2;
 }
 
 .main {
@@ -22,6 +22,7 @@
   align-items: center;
   width: 45%;
   justify-content: space-evenly;
+  margin-bottom: 10px;
 }
 
 .image {
@@ -52,6 +53,15 @@
   line-height: 1.5;
   font-size: 1.5rem;
   width: 66%;
+  background: #F8F8ff;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
+  padding: 5px;
+  box-sizing: content-box;
 }
 
 .links {
