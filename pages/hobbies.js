@@ -2,8 +2,19 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import hobbiesData from '../public/hobbies-data'
+import Card from '../components/card'
 
-export default function Hobbies() {
+export async function getStaticProps() {
+    const data = hobbiesData
+    return {
+        props: {
+            data
+        }
+    }
+}
+
+export default function Hobbies(props) {
     return (
         <div className={styles.container}>
             <Head>
@@ -25,6 +36,9 @@ export default function Hobbies() {
             <Link href='/'>
                 <a className={styles.links}>Home</a>
             </Link>
+            <Link href='/journey'>
+                <a className={styles.links}>My Journey</a>
+            </Link>
             <Link href='/about'>
                 <a className={styles.links}>About Me</a>
             </Link>
@@ -32,42 +46,9 @@ export default function Hobbies() {
             <p className={styles.description}>
                 This is the My Hobbies page, where I will go into some detail about what I could be found doing while I am not at work:
             </p>
-            <div className={styles.header}>
-                <Image
-                    priority
-                    src='/guitar.jpg'
-                    height={150}
-                    width={150}
-                    className={styles.image} 
-                />
-                <p className={styles.description}>
-                    One of my most common leisure activities is practicing guitar. I can often be found trying to learn new techniques and songs(often in the metal genre). I've been playing guitar on and off for about 7 years now.
-                </p>
-            </div>
-            <div className={styles.header}>
-                <Image 
-                    priority
-                    src='/video-game.jpg'
-                    height={150}
-                    width={150}
-                    className={styles.image}
-                />
-                <p className={styles.description}>
-                    If I'm not practicing my guitar, I can also be found playing some of my favorite video games. These include the God of War series, Sea of Thieves, Madden, NBA 2k, MLB The Show, Phasmophobia and Destroy All Humans.
-                </p>
-            </div>
-            <div className={styles.header}>
-                <Image 
-                    priority
-                    src='/comic-book.jpg'
-                    height={150}
-                    width={150}
-                    className={styles.image}
-                />
-                <p className={styles.description}>
-                    If I'm not doing one of the above activities, I and usually be found reading or researching a comic book. I currently have over 1000 comic books in my collection and I plan to add more over the years.
-                </p>
-            </div>
+            {props.data.map((hobby) => {
+               return <Card props={hobby}/>
+            })}
             <footer className={styles.footer}>
             </footer>
         </div>
