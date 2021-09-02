@@ -42,8 +42,39 @@ export default function Home() {
         <p className={styles.description}>
           Hello, my name is Johnathan and this is a small site containing information about me, some of my projects and my journey to become a developer. Below you will find a few of the projects I've done or contributed to:
         </p>
-
-        
+        <div>
+          <Image 
+            priority 
+            src='/R&Mproject.jpg'
+            height={300}
+            width={500}
+            alt='Rick and Morty project'
+            className={styles.image}
+          />
+          <a className={styles.links} href='https://rick-and-morty-characters.vercel.app/'>My Rick and Morty API project</a>
+        </div>
+        <div>
+          <Image 
+            priority
+            src='/MedCab.jpg'
+            height={300}
+            width={500}
+            alt='MedCab project'
+            className={styles.image}
+          />
+          <a className={styles.links} href='https://medcab-react-team.vercel.app/login'>My MedCab build-week project</a>
+        </div>
+        <div>
+          <Image 
+            priority
+            src='/nasaproject.jpg'
+            height={300}
+            width={500}
+            alt='Nasa Project'
+            className={styles.image}
+          />
+          <a className={styles.links} href='https://github.com/jhoyt200931/nasa-photo-of-the-day'>Link to my Nasa Project Repo</a>
+        </div>
       </main>
 
       <footer className={styles.footer}>

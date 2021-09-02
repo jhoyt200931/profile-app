@@ -43,9 +43,6 @@ export default function Hobbies(props) {
                 <a className={styles.links}>About Me</a>
             </Link>
             </div>
-            <p className={styles.description}>
-                This is the My Hobbies page, where I will go into some detail about what I could be found doing while I am not at work:
-            </p>
             {props.data.map((hobby) => {
                return <Card props={hobby}/>
             })}

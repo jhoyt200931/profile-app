@@ -14,7 +14,6 @@ export async function getStaticProps() {
 }
 
 export default function About(props) {
-    console.log(props)
     return (
         <div className={styles.container}>
             <Head>
