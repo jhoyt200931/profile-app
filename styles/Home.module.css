@@ -1,28 +1,71 @@
 .container {
   min-height: 100vh;
+  max-height: 250vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #FEFEF2;
+  background: #FFFFFF;
+}
+
+.pageTitle {
+  height: 7rem;
+  text-decoration: underline;
+  border-bottom: 1px solid black;
+  width: 100%;
+  text-align: center;
+  background: #e7f5fe;
+  margin-top: 0;
 }
 
 .main {
-  padding: 5rem 0;
+  padding: 0;
   flex: 1;
+  min-height: inherit;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+}
+
+.menu {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-height: 145vh;
+  justify-items: flex-start;
+  width: 20%;
+  background: #e7f5fe;
+  border-right: solid black 1px;
 }
 
 .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 45%;
+  width: 100%;
   justify-content: space-evenly;
   margin-bottom: 10px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
 }
 
 .textDiv {
@@ -49,7 +92,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .title,
@@ -58,9 +101,9 @@
 }
 
 .description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-  width: 66%;
+  line-height: 1.2;
+  font-size: 1.2rem;
+  width: 50%;
   background: #F8F8ff;
   height: 350px;
   display: flex;

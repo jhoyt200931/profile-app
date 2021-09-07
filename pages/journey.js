@@ -4,6 +4,11 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import journeyData from '../public/journey-data'
 import Card from '../components/card'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faLinkedin,
+  faGithub
+} from '@fortawesome/free-brands-svg-icons'
 
 export async function getStaticProps() {
     return {
@@ -22,37 +27,54 @@ export default function Journey(props) {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.header}>
-          <Image
-            className={styles.image}
-            priority
-            src='/batman.jpg'
-            height={200}
-            width={200}
-            alt='batman picture'
-          />
-          <h1 className={styles.title}>
-            My Journey
-          </h1>
-        </div>
+        <div className={styles.menu}>
+          <div className={styles.header}>
+            <Image
+              className={styles.image}
+              priority
+              src='/batman.jpg'
+              height={200}
+              width={200}
+              alt='batman picture'
+            />
+            <h1 className={styles.title}>
+              Johnathan Hoyt
+            </h1>
+            <h2>Web Developer</h2>
+          </div>
 
-        <ul>
-            <Link href='/'>
-            <a className={styles.links}>Home</a>
+          <ul className={styles.navigation}>
+              <Link href='/'>
+              <a className={styles.links}>Home</a>
+              </Link>
+            <Link href='/about'>
+              <a className={styles.links}>About Me</a>
             </Link>
-          <Link href='/about'>
-            <a className={styles.links}>About Me</a>
-          </Link>
-          <Link href='/hobbies'>
-            <a className={styles.links}>My Hobbies</a>
-          </Link>
-        </ul>
-        {props.journeyData.map((snippet) => {
-          return  <Card props={snippet}/>
-        })}
+            <Link href='/hobbies'>
+              <a className={styles.links}>My Hobbies</a>
+            </Link>
+            <Link href='https://www.linkedin.com/in/johnathan-hoyt-177508146/'>
+              <FontAwesomeIcon icon={faLinkedin} style={{width: '40px'}} />
+            </Link>
+            <Link href='https://github.com/jhoyt200931'>
+              <FontAwesomeIcon icon={faGithub} style={{width: '40px'}}/>
+            </Link> 
+          </ul>
+        </div>
+        <div className={styles.content}>
+          <h1 className={styles.pageTitle}>My Journey</h1>
+          {props.journeyData.map((snippet) => {
+            return  <Card props={snippet}/>
+          })}
+        </div>
       </main>
-
       <footer className={styles.footer}>
+        <Link href='https://www.linkedin.com/in/johnathan-hoyt-177508146/'>
+          <FontAwesomeIcon icon={faLinkedin} style={{width: '50px'}} />
+        </Link>
+        <Link href='https://github.com/jhoyt200931'>
+          <FontAwesomeIcon icon={faGithub} style={{width: '50px', margin: '10px'}}/>
+        </Link>
       </footer>
     </div>
   )
